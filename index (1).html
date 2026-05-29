@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AthletesNow! — Athletes Get Noticed, Now!</title>
+<meta name="description" content="AthletesNow! is a two-sided, NCAA-compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. iOS & Android.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{position:relative;overflow:hidden;padding:90px 24px 80px;text-align:center;}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;
+    background:radial-gradient(60% 50% at 50% 0%,rgba(0,194,255,.16),transparent 70%),
+               radial-gradient(50% 40% at 80% 30%,rgba(0,229,160,.12),transparent 70%);}
+  .hero::after{content:"";position:absolute;inset:0;z-index:0;opacity:.4;
+    background-image:linear-gradient(var(--border) 1px,transparent 1px),
+      linear-gradient(90deg,var(--border) 1px,transparent 1px);
+    background-size:48px 48px;-webkit-mask-image:radial-gradient(70% 60% at 50% 0%,#000,transparent 75%);
+            mask-image:radial-gradient(70% 60% at 50% 0%,#000,transparent 75%);}
+  .hero>*{position:relative;z-index:1;}
+  .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--green);border:1px solid rgba(0,229,160,.35);
+    background:rgba(0,229,160,.08);padding:6px 14px;border-radius:999px;margin-bottom:26px;
+    animation:fade .8s ease both;}
+  .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(54px,11vw,118px);
+    line-height:.92;letter-spacing:1px;margin:0 0 18px;animation:fade .8s .05s ease both;}
+  .hero h1 .grad{background:linear-gradient(120deg,var(--cyan),var(--green) 55%,var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.lead{max-width:600px;margin:0 auto 34px;color:var(--muted);font-size:clamp(16px,2.4vw,20px);
+    animation:fade .8s .1s ease both;}
+  .stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fade .8s .15s ease both;}
+  .store-btn{display:flex;align-items:center;gap:11px;background:#000;border:1px solid var(--border);
+    border-radius:13px;padding:11px 20px;min-width:190px;transition:transform .12s,border-color .2s;}
+  .store-btn:hover{transform:translateY(-2px);border-color:var(--cyan);text-decoration:none;}
+  .store-btn svg{flex-shrink:0;}
+  .store-btn .t{text-align:left;line-height:1.1;}
+  .store-btn .t small{display:block;font-size:10px;color:var(--muted);letter-spacing:.5px;}
+  .store-btn .t b{font-size:17px;color:#fff;font-weight:600;font-family:'DM Sans';}
+  .soon{font-size:11px;color:var(--gold);margin-top:14px;letter-spacing:1px;animation:fade .8s .2s ease both;}
+  @keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+  .section{max-width:1040px;margin:0 auto;padding:70px 24px;}
+  .section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,5vw,46px);
+    letter-spacing:1px;text-align:center;margin:0 0 8px;}
+  .section .sub{text-align:center;color:var(--muted);margin:0 auto 46px;max-width:520px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;
+    transition:transform .15s,border-color .2s;cursor:pointer;position:relative;}
+  .card:hover{transform:translateY(-3px);border-color:rgba(0,194,255,.4);}
+  .card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    font-size:22px;margin-bottom:16px;background:linear-gradient(135deg,rgba(0,194,255,.18),rgba(0,229,160,.18));}
+  .card h3{margin:0 0 7px;font-size:18px;}
+  .card p{margin:0;color:var(--muted);font-size:14.5px;}
+  .card .more{max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .35s ease,opacity .3s ease,margin-top .3s ease;
+    color:#c4d3ec;font-size:13.5px;line-height:1.55;margin-top:0;}
+  .card.open .more{max-height:340px;opacity:1;margin-top:14px;}
+  .card .toggle{position:absolute;top:24px;right:22px;color:var(--cyan);font-size:18px;
+    font-weight:600;line-height:1;transition:transform .3s;}
+  .card.open .toggle{transform:rotate(45deg);}
+  .card .more ul{margin:8px 0 0;padding-left:18px;}
+  .card .more li{margin-bottom:6px;}
+
+  .audiences{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+  .aud{border:1px solid var(--border);border-radius:14px;padding:22px;text-align:center;
+    background:linear-gradient(180deg,var(--card),transparent);}
+  .aud .big{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;
+    background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;
+    background-clip:text;color:transparent;}
+  .aud p{margin:6px 0 0;color:var(--muted);font-size:13.5px;}
+
+  .equity{background:linear-gradient(135deg,rgba(0,194,255,.07),rgba(255,184,0,.05));
+    border:1px solid var(--border);border-radius:20px;padding:40px 28px;text-align:center;margin-top:14px;}
+  .equity h3{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;margin:0 0 10px;}
+  .equity .leagues{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px;}
+  .equity .pill{font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;
+    border:1px solid var(--border);background:var(--navy);color:var(--text);}
+  .equity .pill.w{border-color:rgba(0,229,160,.5);color:var(--green);}
+
+  .cta{text-align:center;padding:80px 24px 30px;}
+  .cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,6vw,58px);letter-spacing:1px;margin:0 0 22px;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/"><img src="favicon.png" alt="AthletesNow logo"><span>ATHLETES<b>NOW!</b></span></a>
+  <div class="links">
+    <a href="#features">Features</a>
+    <a href="#who">Who it's for</a>
+    <a href="/support.html">Support</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="badge">NCAA-Compliant · iOS & Android</span>
+  <h1>ATHLETES GET NOTICED,<br><span class="grad">NOW!</span></h1>
+  <p class="lead">The two-sided recruiting platform that connects athletes, schools, pro franchises, and certified agents — with compliance and athlete protection built into every swipe.</p>
+  <div class="stores">
+    <a class="store-btn" href="#" aria-label="Download on the App Store">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M16.36 1.43c.04 1.07-.36 2.12-1.04 2.9-.7.82-1.86 1.45-2.98 1.36-.06-1.05.42-2.13 1.06-2.84.71-.8 1.96-1.4 2.96-1.42zM20.5 17.13c-.5 1.16-.74 1.67-1.39 2.7-.9 1.43-2.18 3.22-3.76 3.23-1.4.01-1.76-.92-3.67-.91-1.9.01-2.3.93-3.7.92-1.58-.01-2.79-1.62-3.7-3.05-2.53-3.98-2.8-8.65-1.24-11.13 1.11-1.76 2.86-2.79 4.5-2.79 1.68 0 2.73.92 4.12.92 1.34 0 2.16-.92 4.1-.92 1.47 0 3.03.8 4.14 2.18-3.64 2-3.05 7.2.2 8.85z"/></svg>
+      <span class="t"><small>App Store</small><b>In Review</b></span>
+    </a>
+    <a class="store-btn" href="#" aria-label="Coming soon to Google Play">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#00E5A0" d="M3.6 2.3 13 11.7l-9.4 9.4c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1z"/><path fill="#00C2FF" d="M16.8 8.5 13 11.7 3.6 2.3c.4-.2.9-.2 1.4.1l11.8 6.1z"/><path fill="#FFB800" d="M20.6 11c.6.4.6 1.3 0 1.7l-2.6 1.4-3.2-3.2 3.2-3.2 2.6 1.3z"/><path fill="#FF6B6B" d="M16.8 14.9 5 21c-.5.3-1 .3-1.4.1L13 11.7l3.8 3.2z"/></svg>
+      <span class="t"><small>Google Play</small><b>Coming Soon</b></span>
+    </a>
+  </div>
+  <p class="soon">iOS in App Store review · Android coming soon to Google Play</p>
+</header>
+
+<section class="section" id="features">
+  <h2>BUILT FOR THE WHOLE JOURNEY</h2>
+  <p class="sub">From a Grade 8 highlight reel to a pro contract — one platform, every step.</p>
+  <div class="grid">
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🎯</div><h3>Swipe Scouting</h3><p>Coaches discover verified athletes fast, inside NCAA compliance windows only.</p><div class="more">Browse athlete profiles with a fast, familiar swipe — like, save, or pass. Every card is sport-filtered and shows verified stats, highlight video, and academics at a glance.<ul><li>Filter by sport, position, grad year, and region</li><li>Contact windows auto-locked to NCAA rules — no accidental violations</li><li>Save shortlists and revisit them as the recruiting window opens</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🛡️</div><h3>Athlete Protection</h3><p>Every uploaded video is automatically watermarked. Visibility is opt-in by default.</p><div class="more">Protecting young athletes is built into the core, not bolted on.<ul><li>Automatic, non-removable watermark on every uploaded video</li><li>Timestamped consent acknowledgment required before each upload</li><li>Profiles are invisible to pro teams, agents, and media until the athlete opts in — per league</li><li>Parent or guardian co-accounts for athletes under the age of majority</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📊</div><h3>Weekly Scout Report</h3><p>Athletes see who viewed their profile, for how long, and which sections.</p><div class="more">Turn interest into insight. Each week, athletes get a clear report of recruiting activity on their profile.<ul><li>Which programs viewed you, and how often</li><li>Time spent and which sections drew the most attention</li><li>Trends over time so you know where momentum is building</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🔒</div><h3>Verified Identity</h3><p>Multi-step verification for athletes and institutions before any access is granted.</p><div class="more">Trust starts with knowing everyone is who they say they are.<ul><li>Athletes verify identity and, where applicable, school enrollment</li><li>Institutions complete multi-step verification before gaining scouting access</li><li>Agents must maintain valid union certification</li><li>Instant access revocation if credentials lapse</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📅</div><h3>Trip Planner</h3><p>Weather, athletes, hotels, rides, and cost — built for recruiting visits.</p><div class="more">Everything a coaching staff needs to plan a recruiting trip, in one screen.<ul><li>Weather, travel, and lodging for the destination</li><li>See which verified athletes are nearby and worth a visit</li><li>Estimate and track trip costs against the recruiting budget</li><li>Institutional rates to cut travel spend</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">⭐</div><h3>NIL Score</h3><p>Track social reach across platforms with a transparent, gradeable score.</p><div class="more">A clear, transparent measure of an athlete's name, image, and likeness value.<ul><li>Aggregates reach across social platforms into one score</li><li>Helps athletes understand and grow their brand value</li><li>Informational only — not legal, financial, or eligibility advice</li></ul></div></div>
+  </div>
+</section>
+
+<section class="section" id="who">
+  <h2>WHO IT'S FOR</h2>
+  <p class="sub">A platform for every side of the recruiting table.</p>
+  <div class="audiences">
+    <div class="aud"><div class="big">ATHLETES</div><p>Grade 8 through college. Free to start.</p></div>
+    <div class="aud"><div class="big">SCHOOLS</div><p>Compliance-first scouting & analytics.</p></div>
+    <div class="aud"><div class="big">PRO TEAMS</div><p>Franchise-grade talent discovery.</p></div>
+    <div class="aud"><div class="big">AGENTS</div><p>Union-certified, archive access.</p></div>
+  </div>
+
+  <div class="equity">
+    <h3>WOMEN'S SPORTS, EQUAL FOOTING</h3>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto;">Every women's league is featured with the same depth, visibility, and pricing tier as its counterpart. No afterthoughts.</p>
+    <div class="leagues">
+      <span class="pill">NFL</span><span class="pill w">WNBA</span><span class="pill">NBA</span>
+      <span class="pill w">NWSL</span><span class="pill">MLS</span><span class="pill w">PWHL</span>
+      <span class="pill">NHL</span><span class="pill">MLB</span><span class="pill">CFL</span>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--gold);letter-spacing:1px;">OLYMPIC DEVELOPMENT — COMING Q4 2026</p>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>YOUR NEXT LEVEL STARTS NOW.</h2>
+  <div class="stores">
+    <a class="store-btn" href="#"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M16.36 1.43c.04 1.07-.36 2.12-1.04 2.9-.7.82-1.86 1.45-2.98 1.36-.06-1.05.42-2.13 1.06-2.84.71-.8 1.96-1.4 2.96-1.42zM20.5 17.13c-.5 1.16-.74 1.67-1.39 2.7-.9 1.43-2.18 3.22-3.76 3.23-1.4.01-1.76-.92-3.67-.91-1.9.01-2.3.93-3.7.92-1.58-.01-2.79-1.62-3.7-3.05-2.53-3.98-2.8-8.65-1.24-11.13 1.11-1.76 2.86-2.79 4.5-2.79 1.68 0 2.73.92 4.12.92 1.34 0 2.16-.92 4.1-.92 1.47 0 3.03.8 4.14 2.18-3.64 2-3.05 7.2.2 8.85z"/></svg><span class="t"><small>App Store</small><b>In Review</b></span></a>
+    <a class="store-btn" href="#"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#00E5A0" d="M3.6 2.3 13 11.7l-9.4 9.4c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1z"/><path fill="#00C2FF" d="M16.8 8.5 13 11.7 3.6 2.3c.4-.2.9-.2 1.4.1l11.8 6.1z"/><path fill="#FFB800" d="M20.6 11c.6.4.6 1.3 0 1.7l-2.6 1.4-3.2-3.2 3.2-3.2 2.6 1.3z"/><path fill="#FF6B6B" d="M16.8 14.9 5 21c-.5.3-1 .3-1.4.1L13 11.7l3.8 3.2z"/></svg><span class="t"><small>Google Play</small><b>Coming Soon</b></span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <div class="col">
+      <span class="brandline">ATHLETESNOW!</span>
+      <span>AthletesNow LLC</span>
+      <span>30 N Gould St, Ste N<br>Sheridan, WY 82801</span>
+    </div>
+    <div class="col">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/support.html">Support</a>
+      <a href="/delete-account.html">Delete Account</a>
+    </div>
+    <div class="col" style="max-width:300px;">
+      <span class="legal-line">AthletesNow! is not affiliated with, endorsed by, or sponsored by the NCAA, NFL, NBA, WNBA, NHL, PWHL, MLB, MLS, NWSL, CFL, or any league, team, or players' association. All trademarks are property of their respective owners.</span>
+      <span class="legal-line">© 2026 AthletesNow LLC. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

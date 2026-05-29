@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AthletesNow! — College Athletic Recruiting, Reimagined</title>
+<title>AthletesNow! — Athletes Get Noticed, Now!</title>
 <meta name="description" content="AthletesNow! is a two-sided, NCAA-compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. iOS & Android.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,12 +48,21 @@
   .section .sub{text-align:center;color:var(--muted);margin:0 auto 46px;max-width:520px;}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
   .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;
-    transition:transform .15s,border-color .2s;}
+    transition:transform .15s,border-color .2s;cursor:pointer;position:relative;}
   .card:hover{transform:translateY(-3px);border-color:rgba(0,194,255,.4);}
   .card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
     font-size:22px;margin-bottom:16px;background:linear-gradient(135deg,rgba(0,194,255,.18),rgba(0,229,160,.18));}
   .card h3{margin:0 0 7px;font-size:18px;}
   .card p{margin:0;color:var(--muted);font-size:14.5px;}
+  .card .more{max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .35s ease,opacity .3s ease,margin-top .3s ease;
+    color:#c4d3ec;font-size:13.5px;line-height:1.55;margin-top:0;}
+  .card.open .more{max-height:340px;opacity:1;margin-top:14px;}
+  .card .toggle{position:absolute;top:24px;right:22px;color:var(--cyan);font-size:18px;
+    font-weight:600;line-height:1;transition:transform .3s;}
+  .card.open .toggle{transform:rotate(45deg);}
+  .card .more ul{margin:8px 0 0;padding-left:18px;}
+  .card .more li{margin-bottom:6px;}
 
   .audiences{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
   .aud{border:1px solid var(--border);border-radius:14px;padding:22px;text-align:center;
@@ -107,12 +116,12 @@
   <h2>BUILT FOR THE WHOLE JOURNEY</h2>
   <p class="sub">From a Grade 8 highlight reel to a pro contract — one platform, every step.</p>
   <div class="grid">
-    <div class="card"><div class="ic">🎯</div><h3>Swipe Scouting</h3><p>Coaches discover verified athletes fast, inside NCAA compliance windows only.</p></div>
-    <div class="card"><div class="ic">🛡️</div><h3>Athlete Protection</h3><p>Every uploaded video is automatically watermarked. Visibility is opt-in by default.</p></div>
-    <div class="card"><div class="ic">📊</div><h3>Weekly Scout Report</h3><p>Athletes see who viewed their profile, for how long, and which sections.</p></div>
-    <div class="card"><div class="ic">🔒</div><h3>Verified Identity</h3><p>Multi-step verification for athletes and institutions before any access is granted.</p></div>
-    <div class="card"><div class="ic">📅</div><h3>Trip Planner</h3><p>Weather, athletes, hotels, rides, and cost — built for recruiting visits.</p></div>
-    <div class="card"><div class="ic">⭐</div><h3>NIL Score</h3><p>Track social reach across platforms with a transparent, gradeable score.</p></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🎯</div><h3>Swipe Scouting</h3><p>Coaches discover verified athletes fast, inside NCAA compliance windows only.</p><div class="more">Browse athlete profiles with a fast, familiar swipe — like, save, or pass. Every card is sport-filtered and shows verified stats, highlight video, and academics at a glance.<ul><li>Filter by sport, position, grad year, and region</li><li>Contact windows auto-locked to NCAA rules — no accidental violations</li><li>Save shortlists and revisit them as the recruiting window opens</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🛡️</div><h3>Athlete Protection</h3><p>Every uploaded video is automatically watermarked. Visibility is opt-in by default.</p><div class="more">Protecting young athletes is built into the core, not bolted on.<ul><li>Automatic, non-removable watermark on every uploaded video</li><li>Timestamped consent acknowledgment required before each upload</li><li>Profiles are invisible to pro teams, agents, and media until the athlete opts in — per league</li><li>Parent or guardian co-accounts for athletes under the age of majority</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📊</div><h3>Weekly Scout Report</h3><p>Athletes see who viewed their profile, for how long, and which sections.</p><div class="more">Turn interest into insight. Each week, athletes get a clear report of recruiting activity on their profile.<ul><li>Which programs viewed you, and how often</li><li>Time spent and which sections drew the most attention</li><li>Trends over time so you know where momentum is building</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🔒</div><h3>Verified Identity</h3><p>Multi-step verification for athletes and institutions before any access is granted.</p><div class="more">Trust starts with knowing everyone is who they say they are.<ul><li>Athletes verify identity and, where applicable, school enrollment</li><li>Institutions complete multi-step verification before gaining scouting access</li><li>Agents must maintain valid union certification</li><li>Instant access revocation if credentials lapse</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📅</div><h3>Trip Planner</h3><p>Weather, athletes, hotels, rides, and cost — built for recruiting visits.</p><div class="more">Everything a coaching staff needs to plan a recruiting trip, in one screen.<ul><li>Weather, travel, and lodging for the destination</li><li>See which verified athletes are nearby and worth a visit</li><li>Estimate and track trip costs against the recruiting budget</li><li>Institutional rates to cut travel spend</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">⭐</div><h3>NIL Score</h3><p>Track social reach across platforms with a transparent, gradeable score.</p><div class="more">A clear, transparent measure of an athlete's name, image, and likeness value.<ul><li>Aggregates reach across social platforms into one score</li><li>Helps athletes understand and grow their brand value</li><li>Informational only — not legal, financial, or eligibility advice</li></ul></div></div>
   </div>
 </section>
 

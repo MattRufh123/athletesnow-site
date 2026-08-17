@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AthletesNow! — Athletes Get Noticed, Now!</title>
-<meta name="description" content="AthletesNow! is a two-sided, NCAA-compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. iOS & Android.">
+<meta name="description" content="AthletesNow! is a two-sided, NCAA-compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. Now live on the web.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,11 @@
   .store-btn .t small{display:block;font-size:10px;color:var(--muted);letter-spacing:.5px;}
   .store-btn .t b{font-size:17px;color:#fff;font-weight:600;font-family:'DM Sans';}
   .soon{font-size:11px;color:var(--gold);margin-top:14px;letter-spacing:1px;animation:fade .8s .2s ease both;}
+  .web-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--cyan),var(--green));
+    color:var(--navy);font-weight:800;font-size:17px;padding:15px 32px;border-radius:13px;letter-spacing:.3px;
+    box-shadow:0 8px 30px rgba(0,194,255,.25);transition:transform .12s,box-shadow .2s;}
+  .web-cta:hover{transform:translateY(-2px);text-decoration:none;box-shadow:0 12px 40px rgba(0,229,160,.32);}
+  .web-note{font-size:12px;color:var(--muted);margin-top:16px;letter-spacing:.5px;}
   @keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 
   .section{max-width:1040px;margin:0 auto;padding:70px 24px;}
@@ -96,20 +101,13 @@
 </nav>
 
 <header class="hero">
-  <span class="badge">NCAA-Compliant · iOS & Android</span>
+  <span class="badge">NCAA-Compliant · Now on the Web</span>
   <h1>ATHLETES GET NOTICED,<br><span class="grad">NOW!</span></h1>
   <p class="lead">The two-sided recruiting platform that connects athletes, schools, pro franchises, and certified agents — with compliance and athlete protection built into every swipe.</p>
   <div class="stores">
-    <a class="store-btn" href="#" aria-label="Download on the App Store">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M16.36 1.43c.04 1.07-.36 2.12-1.04 2.9-.7.82-1.86 1.45-2.98 1.36-.06-1.05.42-2.13 1.06-2.84.71-.8 1.96-1.4 2.96-1.42zM20.5 17.13c-.5 1.16-.74 1.67-1.39 2.7-.9 1.43-2.18 3.22-3.76 3.23-1.4.01-1.76-.92-3.67-.91-1.9.01-2.3.93-3.7.92-1.58-.01-2.79-1.62-3.7-3.05-2.53-3.98-2.8-8.65-1.24-11.13 1.11-1.76 2.86-2.79 4.5-2.79 1.68 0 2.73.92 4.12.92 1.34 0 2.16-.92 4.1-.92 1.47 0 3.03.8 4.14 2.18-3.64 2-3.05 7.2.2 8.85z"/></svg>
-      <span class="t"><small>App Store</small><b>In Review</b></span>
-    </a>
-    <a class="store-btn" href="#" aria-label="Coming soon to Google Play">
-      <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#00E5A0" d="M3.6 2.3 13 11.7l-9.4 9.4c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1z"/><path fill="#00C2FF" d="M16.8 8.5 13 11.7 3.6 2.3c.4-.2.9-.2 1.4.1l11.8 6.1z"/><path fill="#FFB800" d="M20.6 11c.6.4.6 1.3 0 1.7l-2.6 1.4-3.2-3.2 3.2-3.2 2.6 1.3z"/><path fill="#FF6B6B" d="M16.8 14.9 5 21c-.5.3-1 .3-1.4.1L13 11.7l3.8 3.2z"/></svg>
-      <span class="t"><small>Google Play</small><b>Coming Soon</b></span>
-    </a>
+    <a class="web-cta" href="https://athletes-now-app.vercel.app">Launch the Web App &rarr;</a>
   </div>
-  <p class="soon">iOS in App Store review · Android coming soon to Google Play</p>
+  <p class="web-note">Runs in any browser — no download required.</p>
 </header>
 
 <section class="section" id="features">
@@ -150,8 +148,7 @@
 <section class="cta">
   <h2>YOUR NEXT LEVEL STARTS NOW.</h2>
   <div class="stores">
-    <a class="store-btn" href="#"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M16.36 1.43c.04 1.07-.36 2.12-1.04 2.9-.7.82-1.86 1.45-2.98 1.36-.06-1.05.42-2.13 1.06-2.84.71-.8 1.96-1.4 2.96-1.42zM20.5 17.13c-.5 1.16-.74 1.67-1.39 2.7-.9 1.43-2.18 3.22-3.76 3.23-1.4.01-1.76-.92-3.67-.91-1.9.01-2.3.93-3.7.92-1.58-.01-2.79-1.62-3.7-3.05-2.53-3.98-2.8-8.65-1.24-11.13 1.11-1.76 2.86-2.79 4.5-2.79 1.68 0 2.73.92 4.12.92 1.34 0 2.16-.92 4.1-.92 1.47 0 3.03.8 4.14 2.18-3.64 2-3.05 7.2.2 8.85z"/></svg><span class="t"><small>App Store</small><b>In Review</b></span></a>
-    <a class="store-btn" href="#"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#00E5A0" d="M3.6 2.3 13 11.7l-9.4 9.4c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1z"/><path fill="#00C2FF" d="M16.8 8.5 13 11.7 3.6 2.3c.4-.2.9-.2 1.4.1l11.8 6.1z"/><path fill="#FFB800" d="M20.6 11c.6.4.6 1.3 0 1.7l-2.6 1.4-3.2-3.2 3.2-3.2 2.6 1.3z"/><path fill="#FF6B6B" d="M16.8 14.9 5 21c-.5.3-1 .3-1.4.1L13 11.7l3.8 3.2z"/></svg><span class="t"><small>Google Play</small><b>Coming Soon</b></span></a>
+    <a class="web-cta" href="https://athletes-now-app.vercel.app">Launch the Web App &rarr;</a>
   </div>
 </section>
 

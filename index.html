@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AthletesNow! — Athletes Get Noticed, Now!</title>
-<meta name="description" content="AthletesNow! is a two-sided, NCAA-compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. Now live on the web.">
+<title>AthletesNow! | Athletes Get Noticed, Now!</title>
+<meta name="description" content="AthletesNow! is an NCAA compliant athletic recruiting platform connecting athletes, schools, pro franchises, and certified agents. Now live on the web.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,9 +49,17 @@
   .web-note{font-size:12px;color:var(--muted);margin-top:16px;letter-spacing:.5px;}
   .intl{max-width:640px;margin:2px auto 30px;color:var(--cyan);font-size:clamp(14px,2.1vw,17px);font-weight:600;line-height:1.5;animation:fade .8s .12s ease both;}
   .safety-strip{text-align:center;color:var(--muted);font-size:12.5px;letter-spacing:.3px;padding:15px 24px;border-bottom:1px solid var(--border);}
-  #soon-banner{position:fixed;top:0;left:0;right:0;z-index:999;display:none;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,var(--cyan),var(--green));color:var(--navy);font-weight:700;font-size:14px;padding:13px 46px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.35);}
+  #soon-banner{position:fixed;top:0;left:0;right:0;z-index:999;display:none;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,var(--cyan),var(--green));color:var(--navy);font-weight:800;font-size:17.5px;letter-spacing:.2px;padding:17px 54px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.4);}
   #soon-banner.show{display:flex;}
-  #soon-banner .x{position:absolute;right:16px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:22px;line-height:1;color:var(--navy);background:none;border:none;font-weight:700;padding:0;}
+  #soon-banner .x{position:absolute;right:18px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:26px;line-height:1;color:var(--navy);background:none;border:none;font-weight:700;padding:0;}
+  /* persistent banner: push page + sticky nav down so nothing hides behind it */
+  body.banner-on{padding-top:60px;}
+  body.banner-on .nav{top:60px;}
+  @media(max-width:560px){
+    body.banner-on{padding-top:88px;}
+    body.banner-on .nav{top:88px;}
+    #soon-banner{font-size:15px;padding:14px 44px;}
+  }
   @keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 
   .section{max-width:1040px;margin:0 auto;padding:70px 24px;}
@@ -96,11 +104,11 @@
   .cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,6vw,58px);letter-spacing:1px;margin:0 0 22px;}
 </style>
 </head>
-<body>
+<body class="banner-on">
 
-<div id="soon-banner">
-  <span>🚀 The AthletesNow web app is launching soon &mdash; check back shortly!</span>
-  <button class="x" type="button" aria-label="Dismiss" onclick="document.getElementById('soon-banner').classList.remove('show')">&times;</button>
+<div id="soon-banner" class="show">
+  <span>🚀 AthletesNow is launching soon. Get ready to get noticed.</span>
+  <button class="x" type="button" aria-label="Dismiss" onclick="document.getElementById('soon-banner').classList.remove('show');document.body.classList.remove('banner-on');">&times;</button>
 </div>
 
 <nav class="nav">
@@ -115,32 +123,32 @@
 <header class="hero">
   <div class="trust">
     <span class="chip">🔒 NCAA Compliant</span>
-    <span class="chip">⚡ Real-Time Data</span>
+    <span class="chip">⚡ Live Data</span>
     <span class="chip">🌎 5 Languages</span>
-    <span class="chip">🌐 Web-Based</span>
+    <span class="chip">🌐 Any Browser</span>
     <span class="chip">✅ Verified Stats</span>
   </div>
   <h1>ATHLETES GET NOTICED,<br><span class="grad">NOW!</span></h1>
-  <p class="lead">The two-sided recruiting platform that connects athletes, schools, pro franchises, and certified agents — with compliance and athlete protection built into every swipe.</p>
+  <p class="lead">The recruiting platform that connects athletes, schools, pro franchises, and certified agents, with compliance and athlete protection built into every swipe.</p>
   <p class="intl">🌎 Built for Canadian &amp; international athletes recruiting into U.S. college &amp; pro programs.</p>
   <div class="stores">
     <a class="web-cta" href="#" onclick="anowSoon();return false;">Launch the Web App &rarr;</a>
   </div>
-  <p class="web-note">Runs in any browser — no download required.</p>
+  <p class="web-note">Runs in any browser. No download required.</p>
 </header>
 
 <div class="safety-strip">🛡️ Guardian consent gates all contact with minors &middot; Registered with NCMEC's CyberTipline</div>
 
 <section class="section" id="features">
   <h2>BUILT FOR THE WHOLE JOURNEY</h2>
-  <p class="sub">From a Grade 8 highlight reel to a pro contract — one platform, every step.</p>
+  <p class="sub">From a Grade 8 highlight reel to a pro contract. One platform, every step.</p>
   <div class="grid">
-    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🎯</div><h3>Swipe Scouting</h3><p>Coaches discover verified athletes fast, inside NCAA compliance windows only.</p><div class="more">Browse athlete profiles with a fast, familiar swipe — like, save, or pass. Every card is sport-filtered and shows verified stats, highlight video, and academics at a glance.<ul><li>Filter by sport, position, grad year, and region</li><li>Contact windows auto-locked to NCAA rules — no accidental violations</li><li>Save shortlists and revisit them as the recruiting window opens</li></ul></div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🛡️</div><h3>Athlete Protection</h3><p>Every uploaded video is automatically watermarked. Visibility is opt-in by default.</p><div class="more">Protecting young athletes is built into the core, not bolted on.<ul><li>Automatic, non-removable watermark on every uploaded video</li><li>Timestamped consent acknowledgment required before each upload</li><li>Profiles are invisible to pro teams, agents, and media until the athlete opts in — per league</li><li>Parent or guardian co-accounts for athletes under the age of majority</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🎯</div><h3>Swipe Scouting</h3><p>Coaches discover verified athletes fast, inside NCAA compliance windows only.</p><div class="more">Browse athlete profiles with a fast, familiar swipe. Like, save, or pass. Every card is filtered by sport and shows verified stats, highlight video, and academics at a glance.<ul><li>Filter by sport, position, grad year, and region</li><li>Contact windows lock to NCAA rules automatically, so no accidental violations</li><li>Save shortlists and revisit them as the recruiting window opens</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🛡️</div><h3>Athlete Protection</h3><p>Every uploaded video is automatically watermarked. Visibility is off until you opt in.</p><div class="more">Protecting young athletes is built into the core, not bolted on.<ul><li>Automatic, permanent watermark on every uploaded video</li><li>Timestamped consent acknowledgment required before each upload</li><li>Profiles are invisible to pro teams, agents, and media until the athlete opts in, per league</li><li>Parent or guardian accounts for athletes under the age of majority</li></ul></div></div>
     <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📊</div><h3>Weekly Scout Report</h3><p>Athletes see who viewed their profile, for how long, and which sections.</p><div class="more">Turn interest into insight. Each week, athletes get a clear report of recruiting activity on their profile.<ul><li>Which programs viewed you, and how often</li><li>Time spent and which sections drew the most attention</li><li>Trends over time so you know where momentum is building</li></ul></div></div>
     <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">🔒</div><h3>Verified Identity</h3><p>Multi-step verification for athletes and institutions before any access is granted.</p><div class="more">Trust starts with knowing everyone is who they say they are.<ul><li>Athletes verify identity and, where applicable, school enrollment</li><li>Institutions complete multi-step verification before gaining scouting access</li><li>Agents must maintain valid union certification</li><li>Instant access revocation if credentials lapse</li></ul></div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📅</div><h3>Trip Planner</h3><p>Weather, athletes, hotels, rides, and cost — built for recruiting visits.</p><div class="more">Everything a coaching staff needs to plan a recruiting trip, in one screen.<ul><li>Weather, travel, and lodging for the destination</li><li>See which verified athletes are nearby and worth a visit</li><li>Estimate and track trip costs against the recruiting budget</li><li>Institutional rates to cut travel spend</li></ul></div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">⭐</div><h3>NIL Score</h3><p>Track social reach across platforms with a transparent, gradeable score.</p><div class="more">A clear, transparent measure of an athlete's name, image, and likeness value.<ul><li>Aggregates reach across social platforms into one score</li><li>Helps athletes understand and grow their brand value</li><li>Informational only — not legal, financial, or eligibility advice</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">📅</div><h3>Trip Planner</h3><p>Weather, athletes, hotels, rides, and cost. Built for recruiting visits.</p><div class="more">Everything a coaching staff needs to plan a recruiting trip, in one screen.<ul><li>Weather, travel, and lodging for the destination</li><li>See which verified athletes are nearby and worth a visit</li><li>Estimate and track trip costs against the recruiting budget</li><li>Institutional rates to cut travel spend</li></ul></div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><span class="toggle">+</span><div class="ic">⭐</div><h3>NIL Score</h3><p>Track social reach across platforms with a transparent, gradeable score.</p><div class="more">A clear, transparent measure of an athlete's name, image, and likeness value.<ul><li>Aggregates reach across social platforms into one score</li><li>Helps athletes understand and grow their brand value</li><li>Informational only. Not legal, financial, or eligibility advice</li></ul></div></div>
   </div>
 </section>
 
@@ -162,7 +170,7 @@
       <span class="pill w">NWSL</span><span class="pill">MLS</span><span class="pill w">PWHL</span>
       <span class="pill">NHL</span><span class="pill">MLB</span><span class="pill">CFL</span>
     </div>
-    <p style="margin-top:20px;font-size:13px;color:var(--gold);letter-spacing:1px;">OLYMPIC DEVELOPMENT — COMING Q4 2026</p>
+    <p style="margin-top:20px;font-size:13px;color:var(--gold);letter-spacing:1px;">OLYMPIC DEVELOPMENT · COMING Q4 2026</p>
   </div>
 </section>
 
@@ -195,7 +203,7 @@
 </footer>
 
 <script>
-function anowSoon(){var b=document.getElementById('soon-banner');if(b){b.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}}
+function anowSoon(){var b=document.getElementById('soon-banner');if(b){b.classList.add('show');document.body.classList.add('banner-on');window.scrollTo({top:0,behavior:'smooth'});}}
 </script>
 </body>
 </html>
